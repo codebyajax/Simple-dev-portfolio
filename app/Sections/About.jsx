@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image";
 
 export default function About() {
@@ -7,23 +6,18 @@ export default function About() {
         { name: "Twitter", href: "https://twitter.com/yourusername" },
         { name: "LinkedIn", href: "https://linkedin.com/in/yourusername" },
         { name: "Medium", href: "https://medium.com/@yourusername", hideOnSmall: true },
-        { name: "Leetcode", href: "https://leetcode.com/yourusername" },
+        { name: "Leetcode", href: "https://leetcode.com/yourusername", hideOnSmall: true },
         { name: "More", href: undefined },
     ]
 
     return (
         <section className="padding about mb-2">
             <p className="font-light">
-                Hey, I'm Jacques<sup className="opacity-75">/Zhock/</sup>, a full stack developer who loves building clean, modern
-                websites and apps where design, functionality,
-                and even the smallest details matter, with a focus on making products that are both practical and visually
-                satisfying.
+                Azianou komi Jacques<sup className="text-black/65">/Azianu komi Zak/</sup> is a Full stack developer and UI/UX philantrophist from Lagos, Nigeria crafting <mark>&nbsp;scalable, accesible and well defined&nbsp;</mark> web applications. He is curently focused on building fast conversion driven projects with clear and simple architecture.
             </p>
 
             <p className="mt-4 font-light">
-                Tech stack isn't my concern, I'm flexible with whatever the project needs, though I prefer modern frameworks and
-                tools.
-                I'm always open for new opportunities to learn and grow.
+                With strong expertise in modern technologies, he builds end to end solutions that balances design integrity with technical efficency.
             </p>
 
             <div className="flex gap-2.5 mt-4">
@@ -36,7 +30,7 @@ export default function About() {
                         alt="icon"
                         className="size-3.75 mb-0.5 invert-100"
                     />
-                    Book a Meeting
+                    Book a meeting
                 </button>
 
                 <a href="/Resume" target="_blank" className="rounded-lg">
@@ -55,11 +49,11 @@ export default function About() {
             </div>
 
             <div className="mt-4">
-                Here are my Handles
+                Tech space handles
 
-                <div className="flex gap-3 mt-3 flex-wrap">
+                <div className="flex gap-1 sm:gap-3 mt-3 flex-wrap select-none">
                     {socials.map((social) => {
-                        const cls = `font-medium text-sm py-[.5em] px-4 hover:bg-[#e0e0e0] bg-[#f0f0f0] rounded-lg cursor-pointer flex items-center justify-center gap-2.5${social.hideOnSmall ? " smaller-hide" : ""}`;
+                        const cls = `font-medium text-sm py-[.5em] sm:px-4 px-3.75 hover:bg-[#e0e0e0] bg-[#f0f0f0] rounded-lg cursor-pointer flex items-center justify-center gap-2.5${social.hideOnSmall ? " smaller-hide" : ""}`;
 
                         const content = (
                             <>

@@ -1,5 +1,5 @@
-"use client"
-
+"use client";
+import Image from "next/image";
 import { useState, useRef } from "react";
 
 export default function Experience() {
@@ -16,12 +16,12 @@ export default function Experience() {
 
             <article className="padding">
                 <div
-                    className="p-2 select-none cursor-pointer head flex justify-between bg-white"
+                    className="p-2 select-none cursor-pointer  flex justify-between  hover:bg-black/5"
                     onClick={() => setIsOpen((prev) => !prev)}
                 >
                     <div className="main flex gap-2">
-                        <figure className="size-14 shrink-0 rounded-[10px] p-0.75 overflow-hidden border flex items-center justify-center">
-                            <img src="./assets/Images/download.jpg" className="size-full rounded-lg border" alt="company image" />
+                        <figure className="size-12 sm:size-14 shrink-0 rounded-[10px] p-0.5 overflow-hidden border flex items-center justify-center">
+                            <Image src="/assets/Images/download.jpg" width={50} height={50} className="size-full rounded-lg border" alt="company image" />
                         </figure>
 
                         <div className="flex flex-col gap-1">

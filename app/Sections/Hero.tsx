@@ -1,13 +1,8 @@
 "use client";
-
-import ImagePIP from "../Components/ImagePIP";
 import { useState, useEffect, useRef } from "react";
-import { useTheme } from "next-themes";
 import Image from "next/image";
 
 function Hero() {
-    const { resolvedTheme, setTheme } = useTheme();
-    const [overlayActive, setOverlayActive] = useState(false);
     const bubbleAudioRef = useRef<HTMLAudioElement>(null);
     const glitchAudioRef = useRef<HTMLAudioElement>(null);
 
@@ -17,15 +12,16 @@ function Hero() {
 
     const [visibleIndex, setVisibleIndex] = useState(-1);
     const phrases = [
-        "Software Engineer",
+        "Design Enginner",
         "Indie hacker",
         "UI/UX designer",
-        "Logic and Problem Solving",
         "Frontend developer",
+        "Backend developer",
+        "Full stack developer",
+        "Logic and Problem Solving",
         "Freelancer",
     ];
 
-    // Lightbox state
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const lightboxRef = useRef<HTMLDivElement>(null);
 
@@ -48,16 +44,15 @@ function Hero() {
         setIsNerfed((prev) => !prev);
         setGlitchKey((prev) => prev + 1);
         setIsGlitching(true);
-        setTimeout(() => setIsGlitching(false), 600);
+        setTimeout(() => setIsGlitching(false), 300);
     };
 
     const profileImage = isNerfed
         ? "/assets/Images/JamesCD.webp"
         : "/assets/Images/JamesBW.webp";
-    const name = isNerfed ? "𝔠𝔞𝔯𝔫𝔦𝔣𝔢𝚡 ☬" : "Azianou Jacques";
+    const name = isNerfed ? "Tony Stark" : "Azianou Jacques";
     const tickColor = isNerfed ? "#e8a807" : "#00aaff";
 
-    // Close lightbox on click outside
     useEffect(() => {
         function handleClickOutside(e: MouseEvent) {
             if (lightboxRef.current && !lightboxRef.current.contains(e.target as Node)) {
@@ -72,7 +67,6 @@ function Hero() {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, [lightboxOpen]);
 
-    // Close lightbox on ESC key
     useEffect(() => {
         function handleKey(e: KeyboardEvent) {
             if (e.key === "Escape") setLightboxOpen(false);
@@ -90,7 +84,6 @@ function Hero() {
 
             <section className="hero flex justify-between padding" aria-labelledby="hero-title">
                 <div className="flex gap-3.5">
-                    {/* Profile Image */}
                     <figure className="holder relative w-24 h-24 rounded-2xl p-1 cursor-pointer">
                         <Image
                             key={glitchKey}
@@ -103,7 +96,6 @@ function Hero() {
                         />
                     </figure>
 
-                    {/* Audio */}
                     <audio preload="auto" ref={glitchAudioRef} className="hidden">
                         <source src="/assets/sound/glitch.wav" type="audio/wav" />
                     </audio>
@@ -111,7 +103,6 @@ function Hero() {
                         <source src="/assets/sound/woosh.mp3" type="audio/mp3" />
                     </audio>
 
-                    {/* Info + Button */}
                     <div className="flex flex-col justify-between items-start">
                         <button
                             type="button"
@@ -119,14 +110,21 @@ function Hero() {
                             className="group text-foreground change text-2xl"
                             aria-label="Change personality"
                         >
-                            {isNerfed ? "C" : "Z"}
+                            {isNerfed ?
+
+                                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" className="opacity-90" height="12" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M448 256c0-106-86-192-192-192l0 384c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"></path></svg>
+
+                                :
+
+                                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" className="opacity-90 rotate-120 hover:text-foreground transition-all duration-300" height="12" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M222.7 32.1c5 16.9-4.6 34.8-21.5 39.8C121.8 95.6 64 169.1 64 256c0 106 86 192 192 192s192-86 192-192c0-86.9-57.8-160.4-137.1-184.1c-16.9-5-26.6-22.9-21.5-39.8s22.9-26.6 39.8-21.5C434.9 42.1 512 140 512 256c0 141.4-114.6 256-256 256S0 397.4 0 256C0 140 77.1 42.1 182.9 10.6c16.9-5 34.8 4.6 39.8 21.5z"></path></svg>
+                            }
                         </button>
 
                         <div className="flex flex-col gap-0">
                             <div className="flex items-center">
                                 <h1
                                     key={glitchKey + "-text"}
-                                    className={`main-img w-full h-full rounded-xl ${isGlitching ? "glitch-text" : ""}`}
+                                    className={`main-img tracking-tight w-full h-full rounded-xl ${isGlitching ? "glitch-text" : ""}`}
                                     id="hero-title"
                                 >
                                     {name}
@@ -137,7 +135,7 @@ function Hero() {
                                     width="20"
                                     height="20"
                                     viewBox="0 0 20 20"
-                                    className="md:mt-0.75 mt-1.5 ml-0.5 md:ml-1 tick"
+                                    className="ml-0.5 size-6.5 tick"
                                     style={{ fill: tickColor }}
                                 >
                                     <title>Verified</title>
@@ -176,18 +174,14 @@ function Hero() {
                         className="group night flex items-center justify-center"
                         aria-label="Toggle theme"
                     >
-                        <svg
-                            stroke="currentColor"
-                            fill="currentColor"
-                            className="mb-1"
-                            strokeWidth="0"
-                            viewBox="0 0 512 512"
-                            height="12"
-                            width="12"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M448 256c0-106-86-192-192-192l0 384c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z" />
-                        </svg>
+                        {isNerfed ?
+
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" className="opacity-90 mb-1.25" height="12" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M448 256c0-106-86-192-192-192l0 384c106 0 192-86 192-192zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"></path></svg>
+
+                            :
+
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" className="opacity-90 mb-1.25 rotate-120 hover:text-foreground transition-all duration-300" height="12" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M222.7 32.1c5 16.9-4.6 34.8-21.5 39.8C121.8 95.6 64 169.1 64 256c0 106 86 192 192 192s192-86 192-192c0-86.9-57.8-160.4-137.1-184.1c-16.9-5-26.6-22.9-21.5-39.8s22.9-26.6 39.8-21.5C434.9 42.1 512 140 512 256c0 141.4-114.6 256-256 256S0 397.4 0 256C0 140 77.1 42.1 182.9 10.6c16.9-5 34.8 4.6 39.8 21.5z"></path></svg>
+                        }
                     </button>
 
                     <div className="flex items-center gap-1" aria-label="Profile views">
@@ -197,11 +191,8 @@ function Hero() {
                 </aside>
             </section>
 
-            <ImagePIP />
-
-            {/* Lightbox Modal */}
             {lightboxOpen && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+                <div className="fixed inset-0 z-100000 flex items-center justify-center bg-black/50 p-4">
                     <div ref={lightboxRef} className="relative max-w-[90vw] max-h-[90vh]">
                         <Image
                             src={profileImage}

@@ -1,7 +1,6 @@
 import { instagramSans } from "@/font";
 import "./globals.css";
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -10,12 +9,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta charSet="utf-8" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=5"
         />
-        <title>Jacques Azianou • Designer &amp; Developer</title>
+        <title>Jacques Azianou | Designer Engineer</title>
         <meta
           name="description"
           content="Helping brands thrive in the digital world. Located in The Nigeria. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Jacques"

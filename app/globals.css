@@ -44,7 +44,7 @@
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
   font-weight: normal;
 }
 
@@ -68,7 +68,7 @@ body {
 .overlay {
   pointer-events: none;
   user-select: none;
-  height: 1677px;
+  height: 9000dvh;
   z-index: 1000;
   position: fixed;
   top: 0;
@@ -184,11 +184,6 @@ h4 {
 
 .hero h1 {
   font-size: 1.5rem;
-}
-
-img,
-video {
-
 }
 
 .text-mutedForeground {
@@ -659,4 +654,20 @@ input:-internal-autofill-selected {
   background-image: none !important;
   background-color: #1f1f1f !important;
   color: #fff !important;
+}
+
+mark {
+  background-color: #fff5b9;
+  color: #212121;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.2rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+::selection {
+  background-color: #454545;
+  color: #fff;
+  fill: #fff;
+  stroke: #fff;
 }
