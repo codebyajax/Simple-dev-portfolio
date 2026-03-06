@@ -15,7 +15,6 @@ export default function page() {
         <div className="line" />
         <Skills />
         <Experience />
-        <Projects/>
         <Contact />
       </main>
       <aside className="overlay" />

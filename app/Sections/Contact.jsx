@@ -7,11 +7,11 @@ export default function Contact() {
         <div className="line" />
         <div className="flex flex-col gap-4 p-6 bg-striped justify-center items-center padding h-fit">
           <form className="flex items-end max-sm:flex-col sm:items-center gap-3 w-full">
-            <label htmlFor="email" className="sr-only">Email address</label>
+            <label htmlFor="emailLabel" className="sr-only">Email address</label>
             <div className="w-full border border-border rounded-2xl p-0.5 bg-white" style={{
               height: "44px"
             }}>
-              <input type="email" placeholder="Enter your email" name="email" className="flex-1 h-full px-4 placeholder:select-none rounded-xl w-full border border-border bg-white text-foreground focus:outline-none focus:ring-none disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 placeholder:text-muted" />
+              <input type="email" placeholder="Enter your email" name="Cemail" id="emailLabel" autoComplete="email" className="flex-1 h-full px-4 placeholder:select-none rounded-xl w-full border border-border bg-white text-foreground focus:outline-none focus:ring-none disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 placeholder:text-muted" />
             </div>
             <button type="submit" style={{
               width: "120px",

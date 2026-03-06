@@ -48,8 +48,8 @@ function Hero() {
     };
 
     const profileImage = isNerfed
-        ? "/assets/Images/JamesCD.webp"
-        : "/assets/Images/JamesBW.webp";
+        ? "/assets/Images/JamesCD.PNG"
+        : "/assets/Images/JamesBW.PNG";
     const name = isNerfed ? "Tony Stark" : "Azianou Jacques";
     const tickColor = isNerfed ? "#e8a807" : "#00aaff";
 
@@ -84,14 +84,15 @@ function Hero() {
 
             <section className="hero flex justify-between padding" aria-labelledby="hero-title">
                 <div className="flex gap-3.5">
-                    <figure className="holder relative w-24 h-24 rounded-2xl p-1 cursor-pointer">
+                    <figure className="holder overflow-hidden relative w-24 h-24 rounded-2xl p-1 cursor-pointer">
                         <Image
                             key={glitchKey}
                             src={profileImage}
+                            loading="eager"
                             alt="Profile Image"
                             width={80}
                             height={80}
-                            className={`rounded-xl ${isGlitching ? "glitch-image" : ""}`}
+                            className={`rounded-xl object-cover object-top w-21.5 h-21.5 ${isGlitching ? "glitch-image" : ""}`}
                             onClick={() => setLightboxOpen(true)}
                         />
                     </figure>
@@ -185,18 +186,19 @@ function Hero() {
                     </button>
 
                     <div className="flex items-center gap-1" aria-label="Profile views">
-                        <Image src="/Eye.svg" alt="eye icon" width={18} height={18} className="opacity-50" />
+                        <Image src="/Eye.svg" alt="eye icon" width={18} height={18} className="opacity-50" loading="eager" />
                         <p className="text-mutedForeground">2.2k</p>
                     </div>
                 </aside>
             </section>
 
             {lightboxOpen && (
-                <div className="fixed inset-0 z-100000 flex items-center justify-center bg-black/50 p-4">
+                <div className="fixed inset-0 z-100000 flex items-center justify-center bg-black/50 p-4 w-dvw h-dvh">
                     <div ref={lightboxRef} className="relative max-w-[90vw] max-h-[90vh]">
                         <Image
                             src={profileImage}
                             alt="Profile Preview"
+                            loading="eager"
                             width={400}
                             height={400}
                             className="rounded-xl object-contain"
