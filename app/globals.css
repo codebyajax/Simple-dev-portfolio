@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --text-color: #282828;
+  --text-color: #454545;
   --text-mute: #9f9f9f;
   --border-border: var(--line-color);
   --line-color: #d2d2d2;
@@ -46,6 +46,10 @@
   -moz-osx-font-smoothing: grayscale;
   text-rendering: geometricPrecision;
   font-weight: normal;
+  font-kerning: normal;
+  font-feature-settings: "kern";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smothing: "grayscale";
 }
 
 html {
@@ -68,7 +72,8 @@ body {
 .overlay {
   pointer-events: none;
   user-select: none;
-  height: 9000dvh;
+  height: 100dvh;
+  height: 100vh;
   z-index: 1000;
   position: fixed;
   top: 0;
@@ -180,6 +185,7 @@ h2,
 h3,
 h4 {
   font-weight: bolder;
+  letter-spacing: -0.03em;
 }
 
 .hero h1 {
@@ -712,4 +718,26 @@ mark {
   gap: 8px;
   overflow: hidden;
   border-radius: 0.45rem;
+}
+
+.point::before {
+  color: var(--overlay-line);
+  width: 0.4em;
+  content: "";
+  height: 0.4em;
+  margin-right: 0.5em;
+  vertical-align: 10%;
+  display: inline-block;
+  -webkit-filter: contrast(1.2);
+  filter: contrast(1.2);
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.point {
+  margin-left: 0.97em;
+  margin-bottom: 0.6rem;
+  
+  text-indent: -0.97em;
+  line-height: 140%;
 }

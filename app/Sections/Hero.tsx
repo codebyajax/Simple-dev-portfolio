@@ -20,6 +20,7 @@ function Hero() {
         "Backend developer",
         "Full stack developer",
         "Logic and Problem Solving",
+        "codebynerf.exe",
         "Freelancer",
     ];
 
@@ -51,7 +52,7 @@ function Hero() {
     const profileImage = isNerfed
         ? "/assets/Images/JamesCD.PNG"
         : "/assets/Images/JamesBW.PNG";
-    const name = isNerfed ? "Tony Stark" : "Azianou Jacques";
+    const name = isNerfed ? "codebynerf.exe" : "Jacques Azainou Komi";
     const tickColor = isNerfed ? "#e8a807" : "#00aaff";
 
     useEffect(() => {
@@ -78,22 +79,18 @@ function Hero() {
 
     return (
         <>
-            <div className="grid-holder">
-                <div className="grid"></div>
-            </div>
             <div className="line" />
-
-            <section className="hero flex justify-between padding" aria-labelledby="hero-title">
-                <div className="flex gap-3.5">
-                    <figure className="holder overflow-hidden relative w-24 h-24 rounded-2xl p-1 cursor-pointer">
+            <section className="hero flex sm:justify-between justify-center padding" aria-labelledby="hero-title">
+                <div className="flex gap-3.5 flex-col h-fit w-fit sm:flex-row">
+                    <figure className="holder overflow-hidden relative w-24 h-24 sm:rounded-2xl rounded-full flex justify-center items-center cursor-pointer mx-auto sm:mx-0 p-[2.5px] ">
                         <Image
                             key={glitchKey}
                             src={profileImage}
                             loading="eager"
                             alt="Profile Image"
-                            width={80}
-                            height={80}
-                            className={`rounded-xl object-cover select-none object-top w-21.5 h-21.5 ${isGlitching ? "glitch-image" : ""}`}
+                            width={96}
+                            height={96}
+                            className={`rounded-full sm:rounded-xl object-cover hover:brightness-90 transition-al duration-300 select-none object-top size-full ${isGlitching ? "glitch-image" : ""}`}
                             onClick={() => setLightboxOpen(true)}
                         />
                     </figure>
@@ -109,7 +106,7 @@ function Hero() {
                         <button
                             type="button"
                             onClick={handleToggle}
-                            className="group text-foreground change text-2xl"
+                            className="group text-foreground hidden sm:inline change text-2xl"
                             aria-label="Change personality"
                         >
                             {isNerfed ?
@@ -122,11 +119,11 @@ function Hero() {
                             }
                         </button>
 
-                        <div className="flex flex-col gap-0">
-                            <div className="flex items-center">
+                        <div className="flex flex-col w-full max-h-40">
+                            <div className="flex items-center mx-auto sm:mx-0">
                                 <h1
                                     key={glitchKey + "-text"}
-                                    className={`main-img tracking-tight w-full h-full rounded-xl ${isGlitching ? "glitch-text" : ""}`}
+                                    className={`main-img tracking-normal w-full h-full rounded-xl ${isGlitching ? "glitch-text" : ""}`}
                                     id="hero-title"
                                 >
                                     {name}
@@ -137,7 +134,7 @@ function Hero() {
                                     width="20"
                                     height="20"
                                     viewBox="0 0 20 20"
-                                    className="ml-0.5 size-6.5 tick"
+                                    className="ml-0.5 size-6! tick"
                                     style={{ fill: tickColor }}
                                 >
                                     <title>Verified</title>
@@ -145,32 +142,35 @@ function Hero() {
                                 </svg>
                             </div>
 
-                            <div className="relative h-5">
+                            <div className="relative h-fit mb-2 sm:mb-0 sm:h-5  sm:mx-0 mx-auto">
+
                                 <p
-                                    className={`text-[#71717b] text-sm font-light absolute inset-0 transition-all duration-1200 ease-out ${visibleIndex >= 0 ? "opacity-0 blur-sm" : "opacity-100 blur-0"
+                                    className={`text-[#71717b] text-sm font-light hidden sm:block  transition-all duration-1200 ease-out ${visibleIndex >= 0 ? "opacity-0 blur-sm" : "opacity-100 blur-0"
                                         }`}
                                     aria-busy
                                     aria-hidden
                                 >
-                                    Open Source Contributor
+                                    codebynerf.exe
                                 </p>
 
                                 {phrases.map((phrase, i) => (
                                     <p
                                         key={i}
-                                        className={`text-mutedForeground text-sm font-light absolute inset-0 transition-all duration-1200 ease-out select-none ${i === visibleIndex ? "opacity-100 blur-0" : "opacity-0 blur-sm"
+                                        className={`text-mutedForeground absolute inset-0 text-sm font-light transition-all duration-1200 ease-out select-none hidden sm:block ${i === visibleIndex ? "opacity-100 blur-0" : "opacity-0 blur-sm"
                                             }`}
                                     >
                                         {phrase}
                                     </p>
                                 ))}
+
+                                <p className=" flex items-center sm:hidden text-[#71717b] text-sm"><span className="font-sans">@</span>codebynerf.exe</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
 
-                <aside className="flex items-end justify-between flex-col">
+                <aside className=" hidden sm:flex items-end justify-between flex-col">
                     <button
                         type="button"
                         className="group night flex items-center justify-center"
@@ -214,6 +214,7 @@ function Hero() {
                     </div>
                 </div>
             )}
+
         </>
     );
 }

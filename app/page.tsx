@@ -1,3 +1,4 @@
+import Grid from "./Components/Grid"
 import Hero from "./Sections/Hero";
 import About from "./Sections/About";
 import Experience from "./Sections/Experience";
@@ -8,11 +9,11 @@ import Contact from "./Sections/Contact"
 export default function page() {
   return (
     <>
+      <Grid />
       <main>
         <Hero />
         <div className="line" />
         <About />
-        <div className="line" />
         <Skills />
         <Experience />
         <Contact />
