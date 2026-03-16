@@ -153,14 +153,15 @@ export default function Skills() {
 
                 <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
                     <span className="border border-black/20!  transition-all duration-300 hover:text-black hover:border-black! hover:bg-black/10  px-2 py-1 skill-stack">
-                        <Image alt="JavaScript" loading="eager" width={16} height={16} className="group-hover:opacity-100 opacity-65 size-4 mt-0.5" src="/assets/SVG/JavaScript.svg" />
+                        <Image alt="JavaScript" loading="eager" width={16} height={16} className="group-hover:opacity-100 opacity-65 size-4 mt-0.5" src="/assets/SVG/a.svg" />
                         JavaScript
                     </span>
                 </Link>
 
 
                 <Link href="https://typescriptlang.org" target="_blank" rel="noopener noreferrer">
-                    <span className="border border-black/20!  transition-all duration-300 hover:text-black hover:border-black! hover:bg-black/10  px-2 py-1 skill-stack"><Image alt="TypeScript" loading="eager" width={16} height={16} className="group-hover:opacity-100 opacity-65 size-4 mt-0.5" src="/assets/SVG/TypeScript.svg" />
+                    <span className="border border-black/20!  transition-all duration-300 hover:text-black hover:border-black! hover:bg-black/10  px-2 py-1 skill-stack">
+                    <Image alt="TypeScript" loading="eager" width={16} height={16} className="group-hover:opacity-100 opacity-65 size-4 mt-0.5" src="/assets/SVG/u.svg" />
                         TypeScript
                     </span>
                 </Link>
