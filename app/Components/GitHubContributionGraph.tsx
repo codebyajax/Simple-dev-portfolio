@@ -33,7 +33,7 @@ export default function GitHubContributionGraph() {
         if (data.error) throw new Error(data.error);
         setWeeks(data.weeks);
 
-        // Total for current year only
+
         const now = new Date();
         const yearStart = new Date(now.getFullYear(), 0, 1).toISOString().split("T")[0];
         let yearTotal = 0;
@@ -60,14 +60,14 @@ export default function GitHubContributionGraph() {
     }
   });
 
-  if (loading) return <p style={{ opacity: 0.7 }}>Loading your real GitHub activity...</p>;
+  if (loading) return <p style={{ opacity: 0.7 }}>Loading GitHub activity...</p>;
   if (error) return <p style={{ color: "#ff5555" }}>Error: {error}</p>;
 
   return (
-    <div className="padding p-0! mt-5! select-none">
+    <article className="padding p-0! mt-5! select-none">
       <div style={{ overflowX: "auto" }}>
         <div style={{ position: "relative", minWidth: "fit-content" }}>
-          {/* Month labels */}
+
           <div style={{ display: "flex", marginBottom: 4, height: 16, position: "relative" }}>
             {monthLabels.map(({ wi, label }) => (
               <div key={wi} style={{
@@ -113,8 +113,8 @@ export default function GitHubContributionGraph() {
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="flex justify-between items-center mt-5">
+
+      <footer className="flex justify-between items-center mt-5">
         <p style={{ fontFamily: "inherit", fontSize: "13px", color: "inherit", opacity: 0.6 }}>
           <span style={{ opacity: 1 }}>{total.toLocaleString()}</span> activities in {new Date().getFullYear()}
         </p>
@@ -125,11 +125,11 @@ export default function GitHubContributionGraph() {
           ))}
           <span style={{ fontSize: 11, opacity: 0.6 }}>More</span>
         </div>
-      </div>
+      </footer>
 
-      {/* Tooltip */}
+
       {tooltip && (
-        <div style={{
+        <figure style={{
           position: "fixed",
           left: tooltip.x + 12,
           top: tooltip.y - 36,
@@ -146,8 +146,8 @@ export default function GitHubContributionGraph() {
           <span style={{ color: "#fff", fontWeight: 600 }}>{tooltip.day.count} activit{tooltip.day.count === 1 ? "y" : "ies"}</span>
           {" on "}
           {new Date(tooltip.day.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
-        </div>
+        </figure>
       )}
-    </div>
+    </article>
   );
 }

@@ -722,22 +722,21 @@ mark {
 
 .point::before {
   color: var(--overlay-line);
-  width: 0.4em;
+  width: 4.5px;
+  height: 4.5px;
   content: "";
-  height: 0.4em;
   margin-right: 0.5em;
   vertical-align: 10%;
   display: inline-block;
   -webkit-filter: contrast(1.2);
   filter: contrast(1.2);
-  background: currentColor;
+  background: #9f9fa9;
   border-radius: 50%;
 }
 
 .point {
-  margin-left: 0.97em;
+  margin-left: 1.25em;
   margin-bottom: 0.6rem;
-  
   text-indent: -0.97em;
   line-height: 140%;
 }

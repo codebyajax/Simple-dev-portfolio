@@ -3,6 +3,7 @@ import Hero from "./Sections/Hero";
 import About from "./Sections/About";
 import Experience from "./Sections/Experience";
 import Projects from "./Sections/Projects";
+import Blog from "./Sections/Blog";
 import Skills from "./Sections/Skills.jsx"
 import Contact from "./Sections/Contact"
 
@@ -16,6 +17,7 @@ export default function page() {
         <About />
         <Skills />
         <Experience />
+        <Blog />
         <Contact />
       </main>
       <aside className="overlay" />

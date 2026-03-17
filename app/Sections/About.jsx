@@ -6,7 +6,7 @@ export default function About() {
         <section className="padding about mb-2">
             <p className="font-light">
                 <ruby>Azianou <rp>hi</rp></ruby>
-                 komi Jacques is a Full stack developer and UI/UX philantrophist from Lagos, Nigeria crafting scalable, accesible and well defined web applications. He is curently focused on building fast conversion driven projects with clear and simple architecture.
+                 komi Jacques recognized as a Full stack developer and UI/UX philantrophist from Lagos, Nigeria crafting scalable, accesible and well defined web applications. He is curently focused on building fast conversion driven projects with clear and simple architecture.
             </p>
 
             <p className="mt-4 font-light">
@@ -21,7 +21,7 @@ export default function About() {
                         height={20}
                        loading="eager"
                         alt="icon"
-                        className="size-3.75 mb-0.5 invert-100"
+                        className="size-3.75 mb-0.5"
                     />
                     Book a meeting
                 </button>
