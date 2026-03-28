@@ -125,7 +125,7 @@ body {
   padding: 12px;
 }
 
-.grid {
+.grid-spot {
   background-image: radial-gradient(
     var(--line-color) 1.25px,
     transparent 1.25px

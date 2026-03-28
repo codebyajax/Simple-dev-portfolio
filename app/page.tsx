@@ -6,17 +6,19 @@ import Projects from "./Sections/Projects";
 import Blog from "./Sections/Blog";
 import Skills from "./Sections/Skills.jsx"
 import Contact from "./Sections/Contact"
+import { Analytics } from "@vercel/analytics/next"
 
 export default function page() {
   return (
     <>
       <Grid />
+      <Analytics />
+
       <main>
         <Hero />
         <div className="line" />
         <About />
         <Skills />
-        <div className="line" />
         <Projects />
         <Experience />
         <Blog />

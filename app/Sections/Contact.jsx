@@ -77,7 +77,7 @@ export default function Contact() {
 
       <div className="line" />
       <div className="grid-holder">
-        <div className="grid" />
+        <div className="grid-spot" />
       </div>
     </>
   );
